@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="finalprojModel.Store" Alias="Self" Provider="MySql.Data.MySqlClient" ProviderManifestToken="5.6" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="finalprojModelStoreContainer">
+    <EntitySet Name="tblaccounts" EntityType="finalprojModel.Store.tblaccounts" store:Type="Tables" Schema="finalproj" />
+    <EntitySet Name="tbladmin" EntityType="finalprojModel.Store.tbladmin" store:Type="Tables" Schema="finalproj" />
+  </EntityContainer>
+  <EntityType Name="tblaccounts">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="AccounType" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="FirstName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="MiddleName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Gender" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Birthday" Type="date" Nullable="false" />
+    <Property Name="Age" Type="int" Nullable="false" />
+    <Property Name="ContactNumber" Type="int" Nullable="false" />
+    <Property Name="EmailAddress" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="UserName" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ConfirmPassword" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="HomeAddress" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="SecretQuestion" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="SecretAnswer" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="RegistrationDate" Type="date" />
+    <Property Name="RegistrationTime" Type="varchar" MaxLength="10" />
+    <Property Name="PhotoPath" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="tbladmin">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+      <PropertyRef Name="Username" />
+    </Key>
+    <Property Name="EmployeeID" Type="int" Nullable="false" />
+    <Property Name="AccounType" Type="varchar" MaxLength="50" />
+    <Property Name="FirstName" Type="varchar" MaxLength="50" />
+    <Property Name="MiddleName" Type="varchar" MaxLength="50" />
+    <Property Name="LastName" Type="varchar" MaxLength="50" />
+    <Property Name="Gender" Type="varchar" MaxLength="20" />
+    <Property Name="Birthday" Type="date" />
+    <Property Name="Age" Type="int" />
+    <Property Name="ContactNumber" Type="int" />
+    <Property Name="EmailAddress" Type="varchar" MaxLength="50" />
+    <Property Name="Username" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="varchar" MaxLength="50" />
+    <Property Name="ConfirmPassword" Type="varchar" MaxLength="50" />
+    <Property Name="HomeAddress" Type="varchar" MaxLength="100" />
+    <Property Name="SecretQuestion" Type="varchar" MaxLength="100" />
+    <Property Name="SecretAnswer" Type="varchar" MaxLength="100" />
+    <Property Name="RegistrationDate" Type="date" />
+    <Property Name="RegistrationTime" Type="varchar" MaxLength="10" />
+    <Property Name="PhotoPath" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6013: The table/view 'def.finalproj.tblacttype' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+      
+      <EntityType Name="tblacttype">
+        <Property Name="ActType" Type="varchar" MaxLength="50" />
+      </EntityType>-->
+</Schema>
